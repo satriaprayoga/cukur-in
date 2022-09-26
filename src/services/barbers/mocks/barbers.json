@@ -1,0 +1,20 @@
+{
+    "barbers":[
+        {
+            "name":"Asep Kurnia Kembangan Barber Shop",
+            "rating":4.5,
+            "jarak":1.6,
+            "photos":[
+                "https://cdn.pixabay.com/photo/2017/05/07/11/46/barber-2292168_960_720.jpg"
+            ]
+        },
+        {
+            "name":"No Name Barbershop",
+            "rating":4.5,
+            "jarak":1.6,
+            "photos":[
+                "https://cdn.pixabay.com/photo/2021/11/15/12/06/barber-shop-6797941_960_720.jpg"
+            ]
+        }
+    ]
+}

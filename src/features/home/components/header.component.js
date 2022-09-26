@@ -20,10 +20,10 @@ const TitleContainer=styled.View`
 const NotifyContainer=styled.View`
   padding:${(props)=>props.theme.space[2]};
   margin-right: 8px;
-  width:40px;
-  height:40px;
+  width:30px;
+  height:30px;
   align-items:center;
-  border-radius:20px;
+  border-radius:15px;
   background-color: #000111;
 `
 
@@ -35,10 +35,10 @@ export const HomeHeader = () => {
             <Text variant="title">cukur-in</Text>
          </TitleContainer>
          <NotifyContainer>
-            <Badge size={6}>
+            {/* <Badge size={6}>
               
-            </Badge>
-            <Feather name="bell" size={20} color="white"/>
+            </Badge> */}
+            <Feather name="bell" size={16} color="white"/>
          </NotifyContainer>
     </HeaderContainer>
     
