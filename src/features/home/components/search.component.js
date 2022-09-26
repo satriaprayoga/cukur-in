@@ -8,8 +8,8 @@ const SearchContainer = styled(View)`
 `;
 
 const AppSearchBar = styled(Searchbar)`
-    max-height:32px;
-    border-radius:12px;
+    max-height:45px;
+    border-radius:16px;
 `;
 
 

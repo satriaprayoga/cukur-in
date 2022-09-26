@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import { Searchbar } from 'react-native-paper'
 import { SafeArea } from '../../../components/utilities/safe-area.component'
 import { HomeHeader } from '../components/header.component'
+import { NearestCapsters } from '../components/nearest-capsters.component'
 import { Search } from '../components/search.component'
 
 export const HomeScreen = () => {
@@ -10,6 +11,7 @@ export const HomeScreen = () => {
     <SafeArea>
         <HomeHeader/>
         <Search/>
+        <NearestCapsters/>
     </SafeArea>
   )
 }

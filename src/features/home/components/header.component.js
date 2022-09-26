@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { Ionicons } from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons';
+import { Badge } from 'react-native-paper'; 
 
 import { Text } from '../../../components/typography/text.component'
 
@@ -13,12 +14,17 @@ const HeaderContainer=styled.View`
 const TitleContainer=styled.View`
   padding:${(props)=>props.theme.space[1]};
   align-items:center;
+  margin-left: 8px;
 `
 
 const NotifyContainer=styled.View`
-  padding:${(props)=>props.theme.space[1]};
+  padding:${(props)=>props.theme.space[2]};
+  margin-right: 8px;
+  width:40px;
+  height:40px;
   align-items:center;
-  width: 50px;
+  border-radius:20px;
+  background-color: #000111;
 `
 
 
@@ -26,10 +32,13 @@ export const HomeHeader = () => {
   return (
     <HeaderContainer>
          <TitleContainer>
-            <Text variant="title">CUKUR-IN</Text>
+            <Text variant="title">cukur-in</Text>
          </TitleContainer>
          <NotifyContainer>
-            <Ionicons name="notifications" size={20} color="black" />
+            <Badge size={6}>
+              
+            </Badge>
+            <Feather name="bell" size={20} color="white"/>
          </NotifyContainer>
     </HeaderContainer>
     
