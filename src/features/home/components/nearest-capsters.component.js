@@ -21,14 +21,14 @@ const CaptionContainer=styled.View`
   margin-right: 8px;
 `
 
-export const NearestCapsters = () => {
+export const NearestCapsters = ({title='Terdekat',linkTitle='Lihat Semua'}) => {
   return (
     <NearestHeader>
         <TitleContainer>
-            <Text variant="title">Terdekat</Text>
+            <Text variant="title">{title}</Text>
         </TitleContainer>
         <CaptionContainer>
-            <Text variant="body">Lihat Semua</Text>
+            <Text variant="body">{linkTitle}</Text>
         </CaptionContainer>
     </NearestHeader>
   )

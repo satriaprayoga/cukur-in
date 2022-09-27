@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { View,Text } from 'react-native'
+import { View,Text, FlatList, ScrollView } from 'react-native'
+import { Card } from 'react-native-paper'
+import styled from 'styled-components/native'
+import { BarberNearestCard } from '../../../components/barbers/barber-nearest-card.component'
 import { SafeArea } from '../../../components/utilities/safe-area.component'
 import { HomeHeader } from '../components/header.component'
 import { NearestCapsters } from '../components/nearest-capsters.component'
 import { Search } from '../components/search.component'
+
+const NearestBarberList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16,
+  },
+})``;
 
 export const HomeScreen = () => {
 
@@ -29,14 +38,20 @@ export const HomeScreen = () => {
     <SafeArea>
         <HomeHeader/>
         <Search/>
+        <ScrollView>
         <NearestCapsters/>
-        <View>
-          {barbers.map((user) => (
-            <Text key={user.name}>
-              {user.name}
-            </Text>
-          ))}
-        </View>
+        <NearestBarberList
+          horizontal={true}
+          data={barbers}
+          renderItem={({item})=>{
+            return(
+             <BarberNearestCard barber={item}/>
+            )
+          }}
+          keyExtractor={item=>item.name}/>
+        <NearestCapsters title="Kapster Rekomendasi"/>
+        
+        </ScrollView>
     </SafeArea>
   )
 }
