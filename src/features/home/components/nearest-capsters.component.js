@@ -1,4 +1,5 @@
 import React from 'react'
+import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { Text } from '../../../components/typography/text.component';
 
@@ -21,14 +22,16 @@ const CaptionContainer=styled.View`
   margin-right: 8px;
 `
 
-export const NearestCapsters = ({title='Terdekat',linkTitle='Lihat Semua'}) => {
+export const NearestCapsters = ({title='Terdekat',linkTitle='Lihat Semua',onPress}) => {
   return (
     <NearestHeader>
         <TitleContainer>
             <Text variant="title">{title}</Text>
         </TitleContainer>
         <CaptionContainer>
-            <Text variant="body">{linkTitle}</Text>
+            <TouchableOpacity onPress={onPress}>
+              <Text variant="body">{linkTitle}</Text>
+            </TouchableOpacity>
         </CaptionContainer>
     </NearestHeader>
   )

@@ -8,7 +8,7 @@ import { Text } from '../../../components/typography/text.component'
 const HeaderContainer=styled.View`
     flex-direction:row;
     justify-content:space-between;
-
+    margin-top: ${(props)=>props.theme.space[3]};
 `
 
 const TitleContainer=styled.View`

@@ -14,7 +14,7 @@ export const makeServer = ({ environment = "development" } = {}) => {
                     return faker.name.fullName()+" Barbershop";
                 },
                 rating(){
-                    return faker.datatype.float({min:0.0, max:5.0});
+                    return faker.datatype.float({min:4.0, max:5.0});
                 },
                 distance(){
                     return faker.datatype.float({min:0.1, max:1.0});
