@@ -6,13 +6,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { TransactionsScreen } from '../../features/transaction/screens/transaction.screen';
 import { AccountScreen } from '../../features/account/screens/account.screen';
 import { HomeNavigator } from './barber.navigator';
+import { OnboardingScreen } from '../../features/onboarding/screens/onboarding.screen';
 
-const Tab=createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
-const TAB_ICON={
-    Home:"md-home",
-    Transaction:"md-cash",
-    Account:"md-person"
+const TAB_ICON = {
+    Home: "md-home",
+    Transaction: "md-cash",
+    Account: "md-person"
 }
 
 const createScreenOptions = ({ route }) => {
@@ -23,19 +24,19 @@ const createScreenOptions = ({ route }) => {
         ),
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
-        headerShown:Platform.OS==='ios'?true:false
+        headerShown: Platform.OS === 'ios' ? true : false
     }
 
 };
 
 
-export const AppNavigator = () => (
-    <NavigationContainer>
+export const AppNavigator = () => {
+    return (
         <Tab.Navigator
-            screenOptions={createScreenOptions}>
-            <Tab.Screen name="Home" component={HomeNavigator}/>
-            <Tab.Screen name="Transaction" component={TransactionsScreen}/>
-            <Tab.Screen name="Account" component={AccountScreen}/>
-        </Tab.Navigator>
-    </NavigationContainer>
-);
+        screenOptions={createScreenOptions}>
+        <Tab.Screen name="Home" component={HomeNavigator} />
+        <Tab.Screen name="Transaction" component={TransactionsScreen} />
+        <Tab.Screen name="Account" component={AccountScreen} />
+    </Tab.Navigator>
+    )
+}
