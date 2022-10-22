@@ -1,6 +1,4 @@
 import React from 'react';
-import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
-import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald';
 import { useFonts as usePoppins, Poppins_300Light, Poppins_400Regular, Poppins_700Bold} from '@expo-google-fonts/poppins';
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components';
@@ -23,19 +21,19 @@ window.server = makeServer();
 export default function App() {
 
 
-  const [oswaldLoaded] = useOswald({
+  /* const [oswaldLoaded] = useOswald({
     Oswald_400Regular
   });
 
   const [latoLoaded] = useLato({
     Lato_400Regular
-  });
+  }); */
 
   const [poppinsLoaded] = usePoppins({
     Poppins_300Light, Poppins_400Regular, Poppins_700Bold
   })
 
-  if (!oswaldLoaded || !latoLoaded) {
+  if (!poppinsLoaded) {
     return null;
   }
 

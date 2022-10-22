@@ -1,5 +1,5 @@
 import React from 'react'
-import { Animated, Dimensions, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Animated, Dimensions, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { OnBoardingImage } from '../components/onboarding-image.component';
 import {images} from '../components/onboarding.images'
 
@@ -51,10 +51,14 @@ export const OnboardingScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       {renderContent()}
+      <TouchableOpacity style={{margin:8}}>
+        <Text style={{color:'#fff'}}>Lanjut &#10230; </Text>
+      </TouchableOpacity>
       <View style={{margin:24,position:'relative',justifyContent:'center', alignItems:'center'}}>
         <Image source={logo} style={{width:80}} resizeMode='cover'/>
         <Text style={{color:'#ffffff', margin:4}}>V.2.0</Text>
       </View>
+      
     </SafeAreaView>
   )
 }

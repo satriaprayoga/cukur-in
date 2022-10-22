@@ -1,6 +1,7 @@
 import React from 'react'
-import { Dimensions, Image, View, Text } from 'react-native'
+import { Dimensions, Image } from 'react-native'
 import styled from 'styled-components/native'
+import { Text } from '../../../components/typography/text.component';
 
 
 
@@ -43,10 +44,10 @@ export const OnBoardingImage = ({image,title,subtitle}) => {
         <OnboardImage source={image} resizeMode="contain"/>
       </OnboardImageContainer>
       <OnboardTextContainer>
-         <OnboardTitle>{title}</OnboardTitle>
+         <Text variant="onboardTitle">{title}</Text>
       </OnboardTextContainer>
       <OnboardTextContainer>
-      <OnboardSubTitle>{subtitle}</OnboardSubTitle>
+        <Text variant="onboardSubTitle">{subtitle}</Text>
       </OnboardTextContainer>
     </OnboardItemContainer>
   )
