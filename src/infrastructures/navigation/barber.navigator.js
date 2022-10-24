@@ -19,7 +19,7 @@ const HomeStack = createStackNavigator();
 export const HomeNavigator = () => {
     return (
         <HomeStack.Navigator>
-            <HomeStack.Screen name='Home' component={HomeScreen} options={{headerShown:false}}/>
+            <HomeStack.Screen name='home' component={HomeScreen} options={{headerShown:false}}/>
             <HomeStack.Screen name='NearestBarbers' component={BarberNearestScreen}
                 options={{
                     headerTitle:(props)=><HeaderTitle {...props}/>
