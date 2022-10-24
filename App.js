@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFonts as usePoppins, Poppins_300Light, Poppins_400Regular, Poppins_700Bold} from '@expo-google-fonts/poppins';
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components/native';
 import { HomeScreen } from './src/features/home/screens/home.screen';
 import { theme } from './src/infrastructures/theme';
 import { makeServer } from './src/services/mocks/mocks.server';
@@ -45,7 +45,7 @@ export default function App() {
         <OnboardContextProvider>
           <BarberContextProvider>
            <NavigationContainer>
-              <Navigation onboard={false}/>
+              <Navigation />
            </NavigationContainer>
           </BarberContextProvider>
         </OnboardContextProvider>
