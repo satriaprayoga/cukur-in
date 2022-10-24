@@ -47,11 +47,11 @@ const renderContent=()=>{
   )
 }
 
-export const OnboardingScreen = () => {
+export const OnboardingScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       {renderContent()}
-      <TouchableOpacity style={{margin:8}}>
+      <TouchableOpacity style={{margin:8}} onPress={()=>navigation.navigate('Signin')}>
         <Text style={{color:'#fff'}}>Lanjut &#10230; </Text>
       </TouchableOpacity>
       <View style={{margin:24,position:'relative',justifyContent:'center', alignItems:'center'}}>
