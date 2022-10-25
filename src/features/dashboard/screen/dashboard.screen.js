@@ -8,6 +8,7 @@ import { SvgXml } from 'react-native-svg';
 
 import logo from '../../../../assets/logo_dashboard';
 import { Searchbar } from 'react-native-paper';
+import { AdvertCardComponent } from '../components/advert/advert-card.component';
 const fakeUser = faker.image.people(50, 50, true);
 
 export const DashboardScreen = () => {
@@ -19,7 +20,7 @@ export const DashboardScreen = () => {
             </LogoContainer>
             <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
                 <HaloContainer>
-                    <Text style={{color:'#000000', fontSize:12}}>Hallo!</Text>
+                    <Text style={{color:'#000000', fontSize:12}}>Halo!</Text>
                     <Text style={{color:'#000000', fontSize:16, fontWeight:'700'}}>Asep Kurnia</Text>
                 </HaloContainer>
                 <Image source={{uri:fakeUser}} resizeMode="cover"  style={{width: 40, height: 40, borderRadius:20, marginRight:16, marginLeft:4}}/>
@@ -31,6 +32,7 @@ export const DashboardScreen = () => {
                 placeholder="Cari Barbershop atau Kapster"
                 />
         </View>
+        <AdvertCardComponent/>
    </SafeArea>
   )
 }
