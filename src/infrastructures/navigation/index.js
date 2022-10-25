@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import React, { useContext } from 'react'
 import { SignInScreen } from '../../features/account/screens/signin.screen'
 import { SignUpScreen } from '../../features/account/screens/signup.screen'
+import { DashboardScreen } from '../../features/dashboard/screen/dashboard.screen'
 import { OnboardingScreen } from '../../features/onboarding/screens/onboarding.screen'
 import { OnboardContext } from '../../services/onboarding/onboarding.context'
 import { AppNavigator } from './app.navigator'
@@ -29,6 +30,7 @@ export const Navigation = () => {
         headerShadowVisible: false, // applied here
         headerBackTitleVisible: false,
       }} />
+      <Stack.Screen name='Dashboard' component={DashboardScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   )
 }

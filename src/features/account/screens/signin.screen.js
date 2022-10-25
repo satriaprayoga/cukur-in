@@ -18,7 +18,7 @@ export const SignInScreen = ({navigation}) => {
       <Text variant="title">Sign In</Text>
       <AuthInput placeholder="email/no.hape"  />
       <AuthInput placeholder="password" secureTextEntry  />
-      <TouchableOpacity style={{ justifyContent: 'center', alignContent: 'center', alignItems: 'center', backgroundColor: '#9C0A10', width: 298, height: 50, marginTop: 16, borderBottomLeftRadius: 10, borderTopRightRadius: 10, borderBottomRightRadius: 10, borderTopLeftRadius: 10 }}>
+      <TouchableOpacity onPress={()=> navigation.navigate('Dashboard')} style={{ justifyContent: 'center', alignContent: 'center', alignItems: 'center', backgroundColor: '#9C0A10', width: 298, height: 50, marginTop: 16, borderBottomLeftRadius: 10, borderTopRightRadius: 10, borderBottomRightRadius: 10, borderTopLeftRadius: 10 }}>
         <Text style={{ color: '#ffffff', fontSize: 16 }}>Sign In</Text>
       </TouchableOpacity>
       <View style={{ flex: 1, justifyContent: 'flex-end', marginBottom: 16 }}>
