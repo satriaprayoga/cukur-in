@@ -29,28 +29,57 @@ const onBoardings=[
 
 ]
 
-const renderContent=()=>{
-  return (
-    <Animated.ScrollView
-      horizontal
-      pagingEnabled
-      scrollEnabled
-      snapToAlignment="center"
-      showsHorizontalScrollIndicator={false}>
-    {onBoardings.map((item,index)=>(
-      <OnBoardingImage key={index} 
-      image={item.img} 
-      title={item.title}
-      subtitle={item.subtitle}/>
-    ))}
-  </Animated.ScrollView>
-  )
-}
+
 
 export const OnboardingScreen = ({navigation}) => {
+
+  const scrollX=new Animated.Value(0);
+
+  const renderContent=()=>{
+    return (
+      <Animated.ScrollView
+        horizontal
+        pagingEnabled
+        scrollEnabled
+        decelerationRate={0}
+        scrollEventThrottle={16}
+        snapToAlignment="center"
+        showsHorizontalScrollIndicator={false}
+        onScroll={Animated.event([
+          {nativeEvent:{contentOffset:{x:scrollX}}},
+        ],{useNativeDriver:false})}
+      >
+      {onBoardings.map((item,index)=>(
+        <OnBoardingImage key={index} 
+        image={item.img} 
+        title={item.title}
+        subtitle={item.subtitle}/>
+      ))}
+    </Animated.ScrollView>
+    )
+  }
+  
+  const renderDots=()=>{
+    return (
+      <View style={{flexDirection:'row'}}>
+        {onBoardings.map((item,index)=>{
+          return (
+            <View 
+              key={`dot-${index}`}style={{borderRadius:20,backgroundColor:'#fff', marginHorizontal:10, width:10, height:10}}>
+        
+           </View>
+          )
+        })}
+      </View>
+     
+    )
+  }
   return (
     <SafeAreaView style={styles.container}>
       {renderContent()}
+      <View style={{position:'absolute', bottom:'30%'}}>
+      {renderDots()}
+      </View>
       <TouchableOpacity style={{margin:8}} onPress={()=>navigation.navigate('Sign In')}>
         <Text style={{color:'#fff'}}>Lanjut &#10230; </Text>
       </TouchableOpacity>
