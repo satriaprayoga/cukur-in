@@ -42,7 +42,7 @@ export const OnboardingScreen = ({navigation}) => {
         pagingEnabled
         scrollEnabled
         decelerationRate={0}
-        scrollEventThrottle={16}
+        scrollEventThrottle={8}
         snapToAlignment="center"
         showsHorizontalScrollIndicator={false}
         onScroll={Animated.event([
@@ -60,14 +60,28 @@ export const OnboardingScreen = ({navigation}) => {
   }
   
   const renderDots=()=>{
+
+    const dotPosition = Animated.divide(scrollX,Dimensions.get('window').width);
     return (
       <View style={{flexDirection:'row'}}>
         {onBoardings.map((item,index)=>{
+          const opacity=dotPosition.interpolate({
+            inputRange: [index-1,index,index+1],
+            outputRange:[0.3,1,0.3],
+            extrapolate:'clamp' 
+          });
+          const dotSize = dotPosition.interpolate({
+            inputRange: [index-1,index,index+1],
+            outputRange:[8,10,8],
+            extrapolate:'clamp' 
+          });
           return (
-            <View 
-              key={`dot-${index}`}style={{borderRadius:20,backgroundColor:'#fff', marginHorizontal:10, width:10, height:10}}>
+            <Animated.View 
+              key={`dot-${index}`}
+              opacity={opacity}
+              style={{borderRadius:20,backgroundColor:'#fff', marginHorizontal:10, width:dotSize, height:dotSize}}>
         
-           </View>
+           </Animated.View>
           )
         })}
       </View>

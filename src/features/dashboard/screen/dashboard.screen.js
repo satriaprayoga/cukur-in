@@ -9,6 +9,7 @@ import { SvgXml } from 'react-native-svg';
 import logo from '../../../../assets/logo_dashboard';
 import { Searchbar } from 'react-native-paper';
 import { AdvertCardComponent } from '../components/advert/advert-card.component';
+import DashboardTitle from '../components/title.components';
 const fakeUser = faker.image.people(50, 50, true);
 
 export const DashboardScreen = () => {
@@ -33,6 +34,7 @@ export const DashboardScreen = () => {
                 />
         </View>
         <AdvertCardComponent/>
+        <DashboardTitle title="Test" subtitle="Oke"/>
    </SafeArea>
   )
 }
