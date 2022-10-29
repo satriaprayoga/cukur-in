@@ -17,8 +17,8 @@ export const TitleText= styled(Text)`
     
 `
 export const SubtitleText= styled(Text)`
-font-size:12px;
-font-weight: 200;
-letter-spacing: -0.3px;
-margin-right: 8px;
+    font-size:12px;
+    font-weight: 200;
+    letter-spacing: -0.3px;
+    margin-right: 8px;
 `

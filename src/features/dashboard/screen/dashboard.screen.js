@@ -1,5 +1,5 @@
-import React from 'react'
-import { Image, View } from 'react-native'
+import React, { useContext } from 'react'
+import { Image, ScrollView, View } from 'react-native'
 import {faker} from '@faker-js/faker'
 import { Text } from '../../../components/typography/text.component';
 import { SafeArea } from '../../../components/utilities/safe-area.component'
@@ -10,9 +10,14 @@ import logo from '../../../../assets/logo_dashboard';
 import { Searchbar } from 'react-native-paper';
 import { AdvertCardComponent } from '../components/advert/advert-card.component';
 import DashboardTitle from '../components/title.components';
+import { BarbersContext } from '../../../services/barbers/barbers.context';
+import { BarberList } from '../components/barber/barber-list.component';
 const fakeUser = faker.image.people(50, 50, true);
 
 export const DashboardScreen = () => {
+
+  const {barbers}=useContext(BarbersContext);
+
   return (
    <SafeArea>
         <HeaderContainer>
@@ -34,7 +39,8 @@ export const DashboardScreen = () => {
                 />
         </View>
         <AdvertCardComponent/>
-        <DashboardTitle title="Test" subtitle="Oke"/>
+        <DashboardTitle title="Barber Terdekat" subtitle="Lihat Semua"/>
+        <BarberList data={barbers} onPress={()=>{}}/>
    </SafeArea>
   )
 }
