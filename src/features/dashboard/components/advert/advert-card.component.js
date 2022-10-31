@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageBackground, View } from 'react-native'
+import { Dimensions, ImageBackground, View } from 'react-native'
 import styled from 'styled-components/native';
 import { Text } from '../../../../components/typography/text.component'
 
@@ -12,7 +12,7 @@ const image = { uri: "https://reactjs.org/logo-og.png" };
 const AdvertContainer = styled.View`
   padding:8px;
   width:100%;
-  height:27%;
+  height:${Dimensions.get('window').height/4}px;
   flex-direction:column;
   background-color:'#fff';
  

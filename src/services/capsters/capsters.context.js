@@ -1,22 +1,21 @@
 import React, { createContext, useEffect, useState } from 'react'
 
-export const BarbersContext = createContext();
 
-export const BarberContextProvider=({children})=>{
+export const CapsterContext = createContext();
 
-    const[barbers,setBarbers]=useState([]);
+export const CapsterContextProvider=({children})=>{
+    const [capsters,setCapsters]=useState([]);
     const [isLoading,setIsLoading]=useState(false);
     const [error,setIsError]=useState(false);
 
-    const loadNearestBarbers=async()=>{
+    const loadCapsters=async () =>{
         setIsLoading(true);
         try {
            
-            let res= await fetch("/api/barbers");
+            let res= await fetch("/api/capsters");
             let data=await res.json();
             if(!data) setIsError(true);
-            setBarbers(data.barbers);
-            console.log("OKKKKKKKKKKKKKKKKKKKKKKKK");
+            setCapsters(data.capsters);
            // setIsLoading(false);
         } catch (error) {
             setIsError(true);
@@ -26,17 +25,17 @@ export const BarberContextProvider=({children})=>{
     };
 
     useEffect(()=>{
-        loadNearestBarbers();
-    },[])
+        loadCapsters();
+    },[]);
 
     return (
-        <BarbersContext.Provider
+        <CapsterContext.Provider
             value={{
-                barbers,
+                capsters,
                 isLoading,
                 error
             }}>
             {children}
-        </BarbersContext.Provider>
+        </CapsterContext.Provider>
     );
-}
+};

@@ -1,14 +1,14 @@
+
 import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 
-export const BarberCardContainer = styled(Card)`
+export const CapsterCardContainer = styled(Card)`
     background-color: #fff;
     margin-left:${(props) => props.theme.space[2]};
     margin-right:${(props) => props.theme.space[2]};
-    border-radius:10px;
 `
 
-export const BarberCardCover = styled(Card.Cover)`
+export const CapsterCardCover = styled(Card.Cover)`
     background-color:#fff;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
@@ -22,15 +22,3 @@ export const Rating = styled.View`
     padding-top: ${(props) => props.theme.space[3]};
     padding-bottom: 0px;
 `;
-
-export const Section = styled.View`
-    flex-direction:row;
-    align-items:center;
-    
-`
-
-export const SectionEnd = styled.View`
-    flex:1;
-    flex-direction:row;
-    justify-content:flex-end;
-`

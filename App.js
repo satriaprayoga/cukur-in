@@ -10,6 +10,7 @@ import { Navigation } from './src/infrastructures/navigation';
 import { AppNavigator } from './src/infrastructures/navigation/app.navigator';
 import { OnboardContextProvider } from './src/services/onboarding/onboarding.context';
 import { NavigationContainer } from '@react-navigation/native';
+import { CapsterContextProvider } from './src/services/capsters/capsters.context';
 
 
 if (window.server) {
@@ -44,9 +45,11 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <OnboardContextProvider>
           <BarberContextProvider>
+           <CapsterContextProvider>
            <NavigationContainer>
               <Navigation />
            </NavigationContainer>
+           </CapsterContextProvider>
           </BarberContextProvider>
         </OnboardContextProvider>
       </ThemeProvider>

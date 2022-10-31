@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { Text } from "../../../components/typography/text.component";
 
 export const TitleContainer = styled.View`
-    margin-top:4px;
+    margin-top:8px;
     flex-direction:row;
     justify-content:space-between;
     align-items:center;

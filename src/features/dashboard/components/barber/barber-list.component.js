@@ -1,11 +1,13 @@
 import React from 'react'
-import { FlatList, TouchableOpacity } from 'react-native'
+import { Dimensions, FlatList, TouchableOpacity } from 'react-native'
 import styled from 'styled-components/native'
 import { BarberCard } from './barber-card.component'
 
 const BarberFlatList = styled(FlatList).attrs({
     contentContainerStyle:{
-        padding:8
+        padding:8,
+        flexGrow:1,
+        paddingBottom:Dimensions.get('window').height/16
     }
 })``
 
