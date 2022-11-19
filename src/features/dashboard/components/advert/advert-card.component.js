@@ -12,7 +12,7 @@ const image = { uri: "https://reactjs.org/logo-og.png" };
 const AdvertContainer = styled.View`
   padding:8px;
   width:100%;
-  height:${Dimensions.get('window').height/4}px;
+  height:${Dimensions.get('window').height/3.3}px;
   flex-direction:column;
   background-color:'#fff';
  
