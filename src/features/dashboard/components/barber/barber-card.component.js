@@ -8,9 +8,9 @@ import { SvgXml } from 'react-native-svg';
 
 export const BarberCard = ({barber={}}) => {
   return (
-    <View style={{borderRadius:30, width:Dimensions.get('window').width/2,flex:1}}>
-      <BarberCardContainer elevation={3}>
-        <BarberCardCover key={barber.name} source={{uri:barber.photos}}/>
+    <View style={{borderRadius:30, width:Dimensions.get('window').width/2, height:Dimensions.get('window').height/3.1,flex:1}}>
+      <BarberCardContainer elevation={3} >
+        <BarberCardCover key={barber.name} source={{uri:barber.photos}} style={{height:Dimensions.get('window').height/4.8}}/>
         <Info>
           <Text variant="caption" style={{textAlign:'right',color:'#c1c1c1'}}>{barber.distance} km</Text>
           <Text variant="label" style={{fontSize:14}}>{barber.name}</Text>

@@ -7,7 +7,7 @@ const BarberFlatList = styled(FlatList).attrs({
     contentContainerStyle:{
         padding:8,
         flexGrow:1,
-        paddingBottom:Dimensions.get('window').height/12
+        paddingBottom:Dimensions.get('window').height/20
     }
 })``
 
