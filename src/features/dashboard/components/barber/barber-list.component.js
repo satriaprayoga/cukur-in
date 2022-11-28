@@ -11,14 +11,14 @@ const BarberFlatList = styled(FlatList).attrs({
     }
 })``
 
-export const BarberList = ({data,onPress}) => {
+export const BarberList = ({data,navigation}) => {
   return (
     <BarberFlatList
         data={data}
         horizontal
         renderItem={({item})=>{
             return (
-                <TouchableOpacity onPress={onPress}>
+                <TouchableOpacity onPress={()=>navigation.navigate('Barber',{barber:item})}>
                     <BarberCard barber={item}/>
                 </TouchableOpacity>
             )

@@ -6,6 +6,7 @@ import { BarberNearestScreen } from '../../features/home/screens/barber/barber-n
 import { Text } from '../../components/typography/text.component';
 import { TouchableOpacity, View } from 'react-native';
 import { Search } from '../../features/home/components/search.component';
+import { BarberDetailPopup } from '../../features/dashboard/components/barber/barber-detail-popup.component';
 
 
 const HeaderTitle=()=>(
@@ -20,6 +21,7 @@ export const HomeNavigator = () => {
     return (
         <HomeStack.Navigator>
             <HomeStack.Screen name='home' component={HomeScreen} options={{headerShown:false}}/>
+            <HomeStack.Screen name='barberDetails' component={BarberDetailPopup}/>
             <HomeStack.Screen name='NearestBarbers' component={BarberNearestScreen}
                 options={{
                     headerTitle:(props)=><HeaderTitle {...props}/>

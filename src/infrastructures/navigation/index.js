@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import React, { useContext } from 'react'
 import { SignInScreen } from '../../features/account/screens/signin.screen'
 import { SignUpScreen } from '../../features/account/screens/signup.screen'
+import { BarberDetailPopup } from '../../features/dashboard/components/barber/barber-detail-popup.component'
 import { DashboardScreen } from '../../features/dashboard/screen/dashboard.screen'
 import { OnboardingScreen } from '../../features/onboarding/screens/onboarding.screen'
 import { OnboardContext } from '../../services/onboarding/onboarding.context'
@@ -31,6 +32,7 @@ export const Navigation = () => {
         headerBackTitleVisible: false,
       }} />
       <Stack.Screen name='Dashboard' component={DashboardScreen} options={{ headerShown: false }} />
+      <Stack.Screen name='Barber' component={BarberDetailPopup}/>
     </Stack.Navigator>
   )
 }
