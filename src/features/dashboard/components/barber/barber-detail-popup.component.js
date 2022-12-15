@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import star from '../../../../../assets/star';
 import { SvgXml } from 'react-native-svg';
+import { BarberPackagesComponents } from './barber-packages-list.components';
 
 export const BarberDetailPopup = ({ route }) => {
 
@@ -38,6 +39,11 @@ export const BarberDetailPopup = ({ route }) => {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 }}>
           <Text variant="label" style={{ fontSize: 16 }}>Kapster</Text>
         </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 }}>
+          <Text variant="label" style={{ fontSize: 16 }}>Paket</Text>
+        </View>
+        <View style={{borderBottomWidth:1, borderBottomColor:'#D3D3D3'}}></View>
+        <BarberPackagesComponents/>
       </View>
     </ScrollView>
   )
